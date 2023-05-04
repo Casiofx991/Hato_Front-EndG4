@@ -47,22 +47,18 @@
     display: flex;
     justify-content: space-between;
   }
-
+  
   .actionButton {
-    display: flex;
+    display: inline-block;
     text-decoration: none;
     background-image: linear-gradient(to right, #f04e23, #8e3aff);
     color: #fff;
-    padding: 8% 20px;
+    padding: 12px 20px;
     border-radius: 5px;
     font-size: 18px;
     font-weight: bold;
     position: relative;
     border: none;
-    justify-content: center;
-    align-items: center;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
   }
 
   .actionButton:hover {

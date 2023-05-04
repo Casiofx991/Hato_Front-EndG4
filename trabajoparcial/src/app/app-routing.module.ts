@@ -1,16 +1,23 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-import { SignInComponent } from "./component/sign-in/sign-in.component";
-//temp
+import { SignInComponent } from './component/sign-in/sign-in.component';
+import { SignUpPlansComponent } from './component/sign-up-plans/sign-up-plans.component';
+import { SignUpRegisterComponent } from './component/sign-up-register/sign-up-register.component';
+import { AddPaymentComponent } from './component/add-payment/add-payment.component';
+import { RoomServicesComponent } from './component/room-services/room-services.component';
 import { HotelAdminViewComponent } from "./component/hotel-admin-view/hotel-admin-view/hotel-admin-view.component";
 
 const routes: Routes = [
-  { path: "sign-in", component: SignInComponent },
-  { path: "", pathMatch: "full", redirectTo: "sign-in" },
-  { path: "**", pathMatch: "full", redirectTo: "sign-in" },
+  {path: 'sign-in', component: SignInComponent},
+  {path: 'sign-up-plans', component: SignUpPlansComponent},
+  {path: 'sign-up-register', component: SignUpRegisterComponent},
+  {path: 'add-payment', component: AddPaymentComponent},
+  {path: 'room-services', component: RoomServicesComponent},
+  {path: "hotel-admin-overview", component: HotelAdminViewComponent},
 
-  { path: "hotel-admin-overview", component: HotelAdminViewComponent },
+  {path: '', pathMatch: 'full', redirectTo: 'sign-in'},
+  {path: '**', pathMatch: 'full', redirectTo: 'sign-in'},
 ];
 
 @NgModule({
