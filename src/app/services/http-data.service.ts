@@ -11,7 +11,7 @@ import { Room } from "../models/room.model";
   providedIn: "root",
 })
 export class HttpDataService {
-  base_url = "http://localhost:3000/Marriotelo";
+  base_url = "http://localhost:8080/api/hato";
   constructor(private http: HttpClient) {}
   httpOptions = {
     headers: new HttpHeaders({
