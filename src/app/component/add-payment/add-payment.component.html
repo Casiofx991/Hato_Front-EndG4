@@ -31,32 +31,40 @@
           class="card-logo"
         />
       </div>
-      <form>
-        <mat-form-field>
-          <mat-label>Nombre y apellidos</mat-label>
-          <input matInput />
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Número de tarjeta</mat-label>
-          <input matInput />
-        </mat-form-field>
-        <div class="row">
-          <mat-form-field class="expiration text">
-            <mat-label>Fecha de expiración</mat-label>
-            <input matInput />
-          </mat-form-field>
-          <mat-form-field class="security-code text">
-            <mat-label>Código de seguridad</mat-label>
-            <input matInput />
-          </mat-form-field>
+      <form [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+        <div mat-dialog-content class="content">
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nombre y apellidos</mat-label>
+                    <input matInput type="text" placeholder="Alex Garcia" formControlName="cardHolder">
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Número de tarjeta</mat-label>
+                    <input matInput type="text" placeholder="1425 3256 789 6325" formControlName="cardNumber">
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Fecha de expiración</mat-label>
+                    <input matInput type="text" placeholder="15/25" formControlName="expirationDate">
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field appearance="outline">
+                    <mat-label>Código de seguridad</mat-label>
+                    <input matInput type="text" placeholder="123" formControlName="cvv">
+                </mat-form-field>
+            </div>
         </div>
-      </form>
-      <button
+    </form>
+    <button
         mat-raised-button
         color="primary"
         class="actionButton neon"
         (click)="signUp()"
-      >
+    >
         Iniciar suscripción
       </button>
     </mat-card-content>

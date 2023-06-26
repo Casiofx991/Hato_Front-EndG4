@@ -122,3 +122,14 @@ mat-form-field {
       text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #8e3aff, 0 0 30px #8e3aff, 0 0 40px #8e3aff, 0 0 55px #8e3aff, 0 0 75px #8e3aff;
     }
   }
+  .form-field {
+    width: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  

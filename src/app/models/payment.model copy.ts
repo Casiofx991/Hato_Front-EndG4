@@ -1,8 +1,6 @@
 export interface Payment {
-    id?: any;
-    paymentType: any;
-    cardNumber: any;
     cardHolder: any;
+    cardNumber: any;
     expirationDate: any;
     cvv: any;
-  }
+}
