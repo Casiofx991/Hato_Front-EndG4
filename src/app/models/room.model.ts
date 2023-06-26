@@ -1,8 +1,10 @@
 export interface Room {
-  room: any;
-  guestName: any;
-  checkinDate: any;
-  price: any;
+  id: any;
+  roomNumber: any;
+  huespedId: any;
+  fechaIngreso: any;
+  fechaSalida: any;
+  precio: any;
   status: any;
-  time: any;
+  tiempo: any;
 }

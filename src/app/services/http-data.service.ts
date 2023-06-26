@@ -11,7 +11,8 @@ import { Room } from "../models/room.model";
   providedIn: "root",
 })
 export class HttpDataService {
-  base_url = "http://localhost:8080/api/hato";
+  base_url = "http://localhost:8080/api/hato/rooms";
+
   constructor(private http: HttpClient) {}
   httpOptions = {
     headers: new HttpHeaders({
@@ -33,6 +34,12 @@ export class HttpDataService {
   getAllRooms(): Observable<Room> {
     return this.http
       .get<Room>(this.base_url)
+      .pipe(retry(2), catchError(this.handleError));
+  }
+
+  createItem(item: any): Observable<Room> {
+    return this.http
+      .post<Room>(this.base_url, JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
 }
