@@ -1,25 +1,32 @@
 <div class="back--color">
   <mat-table [dataSource]="dataSource" class="mat-elevation-z8 element--color">
-    <ng-container matColumnDef="room">
+    <ng-container matColumnDef="roomNumber">
       <mat-header-cell *matHeaderCellDef> Habitacion </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{ element.room }} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{ element.roomNumber }} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="guestName">
+    <ng-container matColumnDef="huespedId">
       <mat-header-cell *matHeaderCellDef> Huesped </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{ element.guestName }} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{ element.huespedId }} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="checkinDate">
+    <ng-container matColumnDef="fechaIngreso">
       <mat-header-cell *matHeaderCellDef> Fecha de ingreso </mat-header-cell>
       <mat-cell *matCellDef="let element">
-        {{ element.checkinDate | date : "dd-MM-yyyy" }}
+        {{ element.fechaIngreso }}
       </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="price">
+    <ng-container matColumnDef="fechaSalida">
+      <mat-header-cell *matHeaderCellDef> Fecha de Salida </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.fechaSalida }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="precio">
       <mat-header-cell *matHeaderCellDef> Precio </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{ element.price }} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{ element.precio }} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="status">
@@ -27,9 +34,9 @@
       <mat-cell *matCellDef="let element"> {{ element.status }} </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="time">
+    <ng-container matColumnDef="tiempo">
       <mat-header-cell *matHeaderCellDef> Tiempo </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{ element.time }} </mat-cell>
+      <mat-cell *matCellDef="let element"> {{ element.tiempo }} </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

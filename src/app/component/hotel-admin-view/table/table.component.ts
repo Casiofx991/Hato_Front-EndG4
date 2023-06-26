@@ -1,4 +1,4 @@
-import { Component, ViewChild } from "@angular/core";
+import { Component, Input, ViewChild } from "@angular/core";
 import { MatTableDataSource } from "@angular/material/table";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatSort } from "@angular/material/sort";
@@ -10,15 +10,18 @@ import { HttpDataService } from "../../../services/http-data.service";
   styleUrls: ["./table.component.css"],
 })
 export class TableComponent {
-  dataSource = new MatTableDataSource();
+  //dataSource = new MatTableDataSource();
   displayedColumns: string[] = [
-    "room",
-    "guestName",
-    "checkinDate",
-    "price",
+    "roomNumber",
+    "huespedId",
+    "fechaIngreso",
+    "fechaSalida",
+    "precio",
     "status",
-    "time",
+    "tiempo",
   ];
+
+  @Input() dataSource = new MatTableDataSource();
 
   @ViewChild(MatPaginator, { static: true })
   paginator!: MatPaginator;

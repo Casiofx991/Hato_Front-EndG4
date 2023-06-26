@@ -6,7 +6,7 @@
       placeholder="Habitacion"
       name="room"
       required
-      [(ngModel)]="roomData.room"
+      [(ngModel)]="roomData.roomNumber"
     />
   </mat-form-field>
 
@@ -17,7 +17,7 @@
       placeholder="Huesped"
       name="guestName"
       required
-      [(ngModel)]="roomData.guestName"
+      [(ngModel)]="roomData.huespedId"
     />
   </mat-form-field>
 
@@ -28,7 +28,18 @@
       placeholder="Fecha de ingreso"
       name="checkinDate"
       required
-      [(ngModel)]="roomData.checkinDate"
+      [(ngModel)]="roomData.fechaIngreso"
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <input
+      type="text"
+      matInput
+      placeholder="Fecha de salida"
+      name="checkoutDate"
+      required
+      [(ngModel)]="roomData.fechaSalida"
     />
   </mat-form-field>
 
@@ -39,7 +50,7 @@
       placeholder="Precio"
       name="price"
       required
-      [(ngModel)]="roomData.price"
+      [(ngModel)]="roomData.precio"
     />
   </mat-form-field>
 
@@ -53,18 +64,24 @@
       [(ngModel)]="roomData.status"
     />
   </mat-form-field>
-  <input
-    type="text"
-    matInput
-    placeholder="Tiempo"
-    name="time"
-    required
-    [(ngModel)]="roomData.time"
-  />
+
+  <mat-form-field appearance="fill">
+    <input
+      type="text"
+      matInput
+      placeholder="Tiempo"
+      name="time"
+      required
+      [(ngModel)]="roomData.tiempo"
+    />
+  </mat-form-field>
   <ng-container *ngIf="isEditMode; else elseTemplate">
-    <button mat-button color="primary">Update</button>
+    <button mat-button color="primary">Update</button> &nbsp;
     <button mat-button color="warn" (click)="cancelEdit()">Cancel</button>
+    &nbsp;
   </ng-container>
   &nbsp;
-  <ng-template #elseTemplate mat-button color="primary">Add</ng-template> &nbsp;
+  <ng-template #elseTemplate>
+    <button mat-button color="primary">Add</button>&nbsp;
+  </ng-template>
 </form>

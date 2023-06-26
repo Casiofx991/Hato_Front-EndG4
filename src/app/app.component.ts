@@ -9,7 +9,7 @@ import { HttpClient } from "@angular/common/http";
 export class AppComponent {
   title = "trabajoparcial";
   constructor(private http: HttpClient) {
-    this.http.get("http://localhost:3000/Marriotelo").subscribe((data) => {
+    this.http.get("http://localhost:8080/api/hato/rooms").subscribe((data) => {
       console.log(data);
     });
   }
