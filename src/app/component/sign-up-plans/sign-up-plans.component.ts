@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/UserService';
 
 @Component({
   selector: 'app-sign-up-plans',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SignUpPlansComponent {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private userService: UserService) { }
 
   inputActive: boolean = false;
   roomCount: number = 0;
@@ -19,6 +20,7 @@ export class SignUpPlansComponent {
   }
 
   subscribe(): void {
+    this.userService.updateUserPlan('Plan ' + this.roomCount);
     this.router.navigate(['/sign-up-register']);
   }
 
