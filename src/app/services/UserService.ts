@@ -8,7 +8,7 @@ import { User } from '../models/user.model';
   providedIn: 'root',
 })
 export class UserService {
-  base_url = 'http://localhost:8080/api/v1/users/';
+  base_url = 'https://hato-back-end.ue.r.appspot.com/api/v1/users/';
   user: User = { username: '', password: '', email: '', plan: '' };
 
   httpOptions = {

@@ -11,7 +11,7 @@ import { Room } from "../models/room.model";
   providedIn: "root",
 })
 export class HttpDataService {
-  base_url = "http://localhost:8080/api/hato/rooms";
+  base_url = "https://hato-back-end.ue.r.appspot.com/api/hato/rooms";
 
   constructor(private http: HttpClient) {}
   httpOptions = {

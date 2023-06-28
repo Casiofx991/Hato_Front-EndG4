@@ -1,6 +1,5 @@
-export interface Serving {
-    id?: any;
+export interface Serving{
     servingType: any;
     orderDate: any;
     deliveryDate: any;
-}  
+}

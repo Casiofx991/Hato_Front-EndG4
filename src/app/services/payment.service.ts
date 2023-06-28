@@ -7,7 +7,7 @@ import { Payment } from '../models/payment.model';
   providedIn: 'root'
 })
 export class PaymentService {
-  base_url = 'http://localhost:8080/api/hato/payments';
+  base_url = 'https://hato-back-end.ue.r.appspot.com/api/hato/payments';
   constructor(private http: HttpClient) { }
 
   httpOptions = {

@@ -29,7 +29,10 @@ export class AddPaymentComponent implements OnInit {
 
   signUp() {
     if (this.paymentForm.valid) {
-      const payment: Payment = this.paymentForm.value;
+      const payment: Payment = {
+        paymentType: "Debit",
+        ...this.paymentForm.value
+      };
       this.paymentService.postPayment(payment).subscribe(
         (response: Payment) => {
           console.log("Pago realizado", response);
@@ -41,7 +44,6 @@ export class AddPaymentComponent implements OnInit {
       );
     }
   }
-
   onSubmit() {
     this.signUp();
   }

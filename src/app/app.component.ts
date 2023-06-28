@@ -8,9 +8,9 @@ import { HttpClient } from "@angular/common/http";
 })
 export class AppComponent {
   title = "trabajoparcial";
-  constructor(private http: HttpClient) {
-    this.http.get("http://localhost:8080/api/hato/rooms").subscribe((data) => {
+  /*constructor(private http: HttpClient) {
+    this.http.get("https://hato-back-end.ue.r.appspot.com/api/hato/payments").subscribe((data) => {
       console.log(data);
     });
-  }
+  }*/
 }

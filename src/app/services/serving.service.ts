@@ -7,7 +7,7 @@ import { Serving } from '../models/serving.model';
   providedIn: 'root'
 })
 export class ServingService {
-  base_url = 'http://localhost:8080/api/hato/servings';
+  base_url = 'https://hato-back-end.ue.r.appspot.com/api/hato/servings';
   constructor(private http: HttpClient) { }
 
   httpOptions = {
@@ -24,8 +24,8 @@ export class ServingService {
     }
     return throwError('Something bad happened; please try again later.');
   }
-   postServing(serving: Serving): Observable<Serving> {
+  postServing(serving: Serving): Observable<Serving> {
     return this.http.post<Serving>(this.base_url, JSON.stringify(serving), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
-    }
+  }
 }

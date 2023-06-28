@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { DataService } from '../data.service';
+//import { DataService } from '../data.service';
 import { Router } from '@angular/router';
+import { OrderService } from 'src/app/services/order.service';
+import { Order } from 'src/app/models/order.model';
 
 @Component({
   selector: 'app-step1',
@@ -9,7 +11,8 @@ import { Router } from '@angular/router';
 })
 
 export class Step1Component {
-  constructor(private dataService: DataService, private router: Router) {}
+  constructor(private orderService: OrderService, private router: Router) {}
+
   selectedOptionNro!:string;
   selectedOptionfood!: string;
   selectedOptiondrink!: string;
@@ -22,9 +25,25 @@ export class Step1Component {
   optionsfoods: string[] = ['Papa Lays' ,'Chesse triz','Piqueo Snacks','Chocolate Donnas','Galleta Margarita', 'Galleta Blackout','Galleta Rellenita'];
   optionscondoms: string[] = ['Durex','Piel','Prudence','Generico'];
   Save() {
-    this.dataService.SaveValues(this.selectedOptionNro,this.selectedOptionfood,this.selectedOptiondrink,this.selectedOptioncondoms,this.foodnumber,this.drinknumber,this.condomsnumber)
-    console.log("2")
-    this.router.navigate(['/step-2']);
+    const order: Order = {
+      roomNumber: this.selectedOptionNro,
+      beverage: this.selectedOptiondrink,
+      beverageQuantity: parseInt(this.drinknumber),
+      appetizer: this.selectedOptionfood,
+      appetizerQuantity: parseInt(this.foodnumber),
+      preservative: this.selectedOptioncondoms,
+      preservativeQuantity: parseInt(this.condomsnumber)
+    };
+    this.orderService.postOrder(order).subscribe(
+      response => {
+        console.log('Orden registrada:', response);
+        this.router.navigate(['/step-2']);
+      },
+      error => {
+        console.error('Error al registrar la orden:', error);
+      }
+    );
   }
+  
   
 }
